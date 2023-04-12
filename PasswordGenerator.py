@@ -40,7 +40,7 @@ def validate_password(password):
     has_symbol = len(re.findall(r'[\W_]', password)) >= 1
     
     # Does a simple check on password
-    if has_three_letters and has_number and has_symbol and len(password) >= 7:
+    if has_three_letters and has_number and has_symbol and len(password) >= 8:
         print(f"Password is {password}")
     else:
         print("Requirements are not met")
@@ -51,7 +51,8 @@ def validate_password(password):
 def create_password():
     while True:
         try:
-            print("Create a password with 3 letters, 1 number, and 1 symbol")
+            print("Create a password with at least 3 letters, 1 number, and 1 symbol")
+            print("Password must also be above 8 characters")
             user_letters = int(input("Enter the amount of letters: "))
             user_numbers = int(input("Enter the amount of numbers: "))
             user_symbols = int(input("Enter the amount of symbols: "))
